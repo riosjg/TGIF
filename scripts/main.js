@@ -101,7 +101,7 @@ for( i=0; i < classroomAge.length; i++)
 
 console.log("--------------------------------------------------------");
 
-var arrTest = [-4, 2, 6, -5, 1, 2, 1, -4];
+var arrTest = [-4, 2, 6, -5, -4, 1, 2, 1, -4];
 // var arrTest = [4, 4];
 
 for(let i=0; i < arrTest.length; i++)
@@ -166,6 +166,8 @@ printArrIndex(arrTest, ind);
 
 function printArrIndex(arr, ind)
 {
+	if( ind > arr.length)
+		console.log("The ingresed index is bigger than the amount of elements of the array.")
 	console.log(arr[ind]);
 }
 
@@ -214,15 +216,86 @@ function arrayIntoString(arr)
 											// JS String Functions
 console.log("--------------------------------------------------------");
 
+// Exercise 1
+
 console.log("	Write a JavaScript function that reverses a number.");
 
-var nam = 2398;
+var num = 2398;
 
-reverseVar(nam);
+console.log("The entered number is: " + num)
 
+reverseVar(num);
 
-function reverseVar(nam)
+function reverseVar(vari)
 {
-	console.log( nam.toString().split("").reverse().join("") );
+	console.log( "The inverse number of the entered one is: " + vari.toString().split("").reverse().join("") );
 }
 
+console.log("--------------------------------------------------------");
+
+// Excercise 2
+
+console.log("	Write a JavaScript function that returns a string in alphabetical order. For example, if x = 'webmaster' then the output should be 'abeemrstw'.  Punctuation and numbers aren't passed in the string.")
+
+let str = "A tu casa malo"
+
+orderAlphabetically(str)
+
+function orderAlphabetically(orderVar){
+	let orderedString = orderVar.split("").sort().join("")
+	console.log(orderedString)
+}
+
+console.log("--------------------------------------------------------");
+
+// Excercise 3
+
+console.log("	Write a JavaScript function that converts the first letter of every word to uppercase.")
+
+console.log("Original string: " + str)
+
+capitalizeFirstLetter(str);
+
+function capitalizeFirstLetter(string)
+{
+	let capitalized = string.split(" ");
+
+	for(let i=0; i < capitalized.length; i++)
+	{
+		capitalized[i] = capitalized[i].charAt(0).toUpperCase() + capitalized[i].substring(1)
+	}
+
+	capitalized = capitalized.join(" ")
+
+	console.log("Capitalized string: " + capitalized);
+}
+
+console.log("--------------------------------------------------------");
+
+// Excercise 4
+
+console.log("Write a JavaScript function that finds the longest word in a phrase.")
+
+console.log("The original string is: " + str)
+
+longestWord(str);
+
+function longestWord(string)
+{
+	let splittedWord = string.split(" ");
+let longest = splittedWord[0]
+	let wordArr = [] 
+
+	// wordArr[0] = splittedWord[0];
+
+	for(let i=0; i < splittedWord.length; i++)
+	{
+		if( splittedWord[i].length  > longest.length ){
+			longest = splittedWord[i];
+		}
+		
+		if
+	}
+
+	console.log("Longest word of the string is: " + pushedArray);
+}
