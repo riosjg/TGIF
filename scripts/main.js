@@ -49,7 +49,7 @@ else
 }
 
 											// JS Array Functions
-console.log("--------------------------------------------------------");
+											console.log("--------------------------------------------------------");
 
 // Excercise 1
 
@@ -113,51 +113,51 @@ console.log("--------------------------------------------------------");
 
 	// Exercise 3
 
-console.log("	Write a function which receives an array as a parameter and prints the lowest number in the array to the console.")
+	console.log("	Write a function which receives an array as a parameter and prints the lowest number in the array to the console.")
 
-printLowestNumber(arrTest);
+	printLowestNumber(arrTest);
 
 
-function printLowestNumber(arr)
-{
-	let res=arr[0];
-	for (let i=1; i < arr.length; i++)
+	function printLowestNumber(arr)
 	{
-		if( res > arr[i] )
-			res=arr[i];
+		let res=arr[0];
+		for (let i=1; i < arr.length; i++)
+		{
+			if( res > arr[i] )
+				res=arr[i];
+		}
+
+		console.log("The lowest number is: " + res );
 	}
 
-	console.log("The lowest number is: " + res );
-}
-
-console.log("--------------------------------------------------------");
+	console.log("--------------------------------------------------------");
 
 	// Exercise 4
 
-console.log("	Write a function which receives an array as a parameter and prints the biggest number in the array to the console.");
+	console.log("	Write a function which receives an array as a parameter and prints the biggest number in the array to the console.");
 
-printBiggestNumber(arrTest);
+	printBiggestNumber(arrTest);
 
 
-function printBiggestNumber(arr)
-{
-	let res=arr[0];
-	for (let i=1; i < arr.length ; i++)
+	function printBiggestNumber(arr)
 	{
-		if ( res < arr[i] )
-			res=arr[i];
+		let res=arr[0];
+		for (let i=1; i < arr.length ; i++)
+		{
+			if ( res < arr[i] )
+				res=arr[i];
+		}
+
+		console.log("The biggest number is: " + res);
 	}
 
-	console.log("The biggest number is: " + res);
-}
-
-console.log("--------------------------------------------------------");
+	console.log("--------------------------------------------------------");
 
 	// Excercise 5
 
-console.log("Write a function which receives two parameters, an array and an index.  The function will print the value of the element at the given position (one-based) to the console.");
+	console.log("Write a function which receives two parameters, an array and an index.  The function will print the value of the element at the given position (one-based) to the console.");
 
-let ind;
+	let ind;
 
 ind = 0//x ej
 
@@ -175,46 +175,46 @@ console.log("--------------------------------------------------------");
 
 	// Excercise 6
 
-console.log("	Write a function which receives an array and only prints the values that repeat.");
+	console.log("	Write a function which receives an array and only prints the values that repeat.");
 
-console.log("These numbers appear more than once:")
+	console.log("These numbers appear more than once:")
 
-printArrayDuplicates(arrTest);
+	printArrayDuplicates(arrTest);
 
-function printArrayDuplicates(arr)
-{
-	for(let i=0; i < arr.length; i++)
+	function printArrayDuplicates(arr)
 	{
-		for(let j=i; j < arr.length; j++)
+		for(let i=0; i < arr.length; i++)
 		{
-			if( arr[i] == arr[j+1])
+			for(let j=i; j < arr.length; j++)
 			{
-				console.log(arr[i]);
-				break;
+				if( arr[i] == arr[j+1])
+				{
+					console.log(arr[i]);
+					break;
+				}
 			}
 		}
 	}
-}
 
-console.log("--------------------------------------------------------");
+	console.log("--------------------------------------------------------");
 
 
 	// Excercise 7
 
-console.log("	Write a simple JavaScript function to join all elements of the following array into a string.");
+	console.log("	Write a simple JavaScript function to join all elements of the following array into a string.");
 
-let myColor = ["Red", "Green", "White", "Black"];
+	let myColor = ["Red", "Green", "White", "Black"];
 
-arrayIntoString(myColor);
+	arrayIntoString(myColor);
 
 
-function arrayIntoString(arr)
-{
-	console.log('"' + arr.join('", "') + '"');
-}
+	function arrayIntoString(arr)
+	{
+		console.log('"' + arr.join('", "') + '"');
+	}
 
 											// JS String Functions
-console.log("--------------------------------------------------------");
+											console.log("--------------------------------------------------------");
 
 // Exercise 1
 
@@ -237,9 +237,9 @@ console.log("--------------------------------------------------------");
 
 console.log("	Write a JavaScript function that returns a string in alphabetical order. For example, if x = 'webmaster' then the output should be 'abeemrstw'.  Punctuation and numbers aren't passed in the string.")
 
-let str = "A tu casa malo"
+let str = "A tu casa malaso volve al tetris casa tetris malo "
 
-orderAlphabetically(str)
+orderAlphabetically("webmaster")
 
 function orderAlphabetically(orderVar){
 	let orderedString = orderVar.split("").sort().join("")
@@ -283,19 +283,29 @@ longestWord(str);
 function longestWord(string)
 {
 	let splittedWord = string.split(" ");
-let longest = splittedWord[0]
-	let wordArr = [] 
+	let longest = splittedWord[0]
+    let wordArr = [] 
+    wordArr[0] = longest
 
-	// wordArr[0] = splittedWord[0];
-
-	for(let i=0; i < splittedWord.length; i++)
+	for(let i=1; i < splittedWord.length; i++)
 	{
-		if( splittedWord[i].length  > longest.length ){
+		if( splittedWord[i].length  > longest.length )
+		{
 			longest = splittedWord[i];
+			wordArr = []; //reinicio el vector
+			wordArr.push(longest);
 		}
-		
-		if
-	}
+		else
+		{
+			if((wordArr.indexOf(splittedWord[i]) == -1) && (wordArr[0].length == splittedWord[i].length))
+			{
+                
+				wordArr.push(splittedWord[i]);
+			}
 
-	console.log("Longest word of the string is: " + pushedArray);
+		}
 }
+ wordArr = wordArr.join(" ");
+console.log("Longest word of the string is: " + wordArr);
+}
+// acepta tu nombre Diego no jodas con que te llamas gabi jajajaja XD 8=====D
