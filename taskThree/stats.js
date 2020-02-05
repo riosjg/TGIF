@@ -85,7 +85,7 @@ function insertTable(idTable, array, fieldOne, fieldTwo, boolean)
         row.innerHTML=
         `<td>${fullname}</td>
         <td>${member[fieldOne]}</td>
-        <td>${member[fieldTwo]}</td>`
+        <td>${member[fieldTwo]} %</td>`
     })
 }
 
@@ -121,6 +121,16 @@ function FillGlanceTable()
     `<td>Democrats</td>
     <td>${stats.democrats.amount}</td>
     <td>${stats.democrats.votes_w_party_pct}</td>`
+    row=glanceTable.insertRow(-1)
+    row.innerHTML=
+    `<td>Republicans</td>
+    <td>${stats.republicans.amount}</td>
+    <td>${stats.republicans.votes_w_party_pct}</td>`
+    row=glanceTable.insertRow(-1)
+    row.innerHTML=
+    `<td>Independents</td>
+    <td>${stats.independents.amount}</td>
+    <td>${stats.independents.votes_w_party_pct}</td>`
 }
 
 FillGlanceTable();
