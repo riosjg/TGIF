@@ -183,17 +183,19 @@ console.log("--------------------------------------------------------");
 
 	function printArrayDuplicates(arr)
 	{
+		let arrAux = []
 		for(let i=0; i < arr.length; i++)
 		{
 			for(let j=i; j < arr.length; j++)
 			{
-				if( arr[i] == arr[j+1])
+				if( ( arr[i] == arr[j+1] ) && ( arrAux.indexOf(arr[i]) ) == -1)
 				{
-					console.log(arr[i]);
-					break;
+					arrAux.push(arr[i]);
 				}
 			}
 		}
+		arrAux.forEach(print => {console.log(print)})
+
 	}
 
 	console.log("--------------------------------------------------------");
